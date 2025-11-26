@@ -1,6 +1,5 @@
 from fastapi import FastAPI, UploadFile
 from fastapi.staticfiles import StaticFiles
-from app.utils import upload_images
 from google import genai
 from google.genai import types
 from fastapi.concurrency import run_in_threadpool
