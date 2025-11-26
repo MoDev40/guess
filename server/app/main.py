@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 client = genai.Client(api_key="AIzaSyAvv65GHpmSWZrNWLDGfDGSU8aPdyXN9F8")
 
 app = FastAPI()
-app.mount("/uploads", StaticFiles(directory="app/uploads"), name="uploads")
+# app.mount("/uploads", StaticFiles(directory="app/uploads"), name="uploads")
 
 app.add_middleware(
   CORSMiddleware,
