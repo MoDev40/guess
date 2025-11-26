@@ -4,8 +4,11 @@ from google import genai
 from google.genai import types
 from fastapi.concurrency import run_in_threadpool
 from fastapi.middleware.cors import CORSMiddleware
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
-client = genai.Client(api_key="AIzaSyAvv65GHpmSWZrNWLDGfDGSU8aPdyXN9F8")
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 app = FastAPI()
 # app.mount("/uploads", StaticFiles(directory="app/uploads"), name="uploads")
