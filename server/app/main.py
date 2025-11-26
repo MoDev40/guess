@@ -4,11 +4,20 @@ from app.utils import upload_images
 from google import genai
 from google.genai import types
 from fastapi.concurrency import run_in_threadpool
+from fastapi.middleware.cors import CORSMiddleware
 
 client = genai.Client(api_key="AIzaSyAvv65GHpmSWZrNWLDGfDGSU8aPdyXN9F8")
 
 app = FastAPI()
 app.mount("/uploads", StaticFiles(directory="app/uploads"), name="uploads")
+
+app.add_middleware(
+  CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 async def index():
