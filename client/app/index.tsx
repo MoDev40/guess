@@ -104,6 +104,7 @@ export default function Index() {
             >
               {result.map((r, index) => (
                 <Text
+                  key={index}
                   style={{
                     fontSize: 16,
                     color: '#333',
@@ -111,7 +112,7 @@ export default function Index() {
                     fontWeight: '500',
                   }}
                 >
-                  {`${index}: ${r}`}
+                  {`${index + 1}: ${r}`}
                 </Text>
               ))}
               <Pressable
